@@ -5,6 +5,8 @@ tutorial we will setup two machines (one as host and the other as target) with
 i10 I/O scheduler enable. The tutorial is based on [i10-kernel/upstream-linux](https://github.com/i10-kernel/upstream-linux)
 with little modification.
 
+[SSR Note](https://hackmd.io/Mk-YNYehSDOXaCFSaVwuvg)
+
 ## Installation
 
 Download linux v5.9-rc2 or v5.9-rc3 and apply the i10 upstream patch.
