@@ -1,0 +1,10 @@
+#!/bin/bash
+cd linux
+make -j8 M=drivers/infiniband/sw/rxe/ modules
+sudo make -j8 M=drivers/infiniband/sw/rxe/ modules_install
+sudo cp /lib/modules/5.16.0-rc1+/extra/rdma_rxe.ko /lib/modules/5.16.0-rc1+/kernel/drivers/infiniband/sw/rxe/
+sudo modprobe -r rdma_rxe
+sudo modprobe rdma_rxe
+cd ../
+sudo rdma link add rxe0 type rxe netdev enp0s3
+
