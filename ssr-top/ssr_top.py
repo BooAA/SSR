@@ -150,10 +150,11 @@ class ssr_top:
         title = "%d: %s"%(qpn, counter)
         self.figure_plot.clear()
         self.figure_plot.plot(
-            np.arange(128),
+            np.arange(-128, -0),
             self.counter_dict[qpn][counter],
         )
         self.figure_plot.set_title(title)
+        self.figure_plot.set_xlabel("second")
         self.figure_plot.set_ylabel("times")
         self.canvas.draw()
 
