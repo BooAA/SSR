@@ -2,6 +2,7 @@
 
 import tkinter as tk
 from tkinter import ttk
+from ttkthemes import ThemedTk
 
 from ssr_monitor import ssr_monitor
 
@@ -22,19 +23,19 @@ class ssr_top:
     counter_dict = {}
 
     def __init__(self) -> None:
-        self.root = tk.Tk()
+        self.root = ThemedTk(theme='adapta')
         self.root.title("SSR top")
         self.root.geometry("")
         self.root.grid_columnconfigure(0, weight=1)
         self.root.grid_rowconfigure(0, weight=1)
-
+    
         align_mode = "nswe"
         pad = 5
 
-        self.div0 = tk.Frame(self.root)
-        self.div1 = tk.Frame(self.root)
-        self.div2 = tk.Frame(self.root)
-        self.div3 = tk.Frame(self.root)
+        self.div0 = ttk.Frame(self.root)
+        self.div1 = ttk.Frame(self.root)
+        self.div2 = ttk.Frame(self.root)
+        self.div3 = ttk.Frame(self.root)
 
         self.div0.grid(column=0, row=0, padx=pad, pady=pad, sticky=align_mode)
         self.div1.grid(column=0, row=1, padx=pad, pady=pad, sticky=align_mode)
@@ -56,7 +57,7 @@ class ssr_top:
         self.qp_list.bind("<<TreeviewSelect>>", self.qp_list_select)
 
         # Refresh Button
-        self.refresh_button = tk.Button(self.div1, text="Refresh")
+        self.refresh_button = ttk.Button(self.div1, text="Refresh")
         self.refresh_button.pack(fill=tk.BOTH, expand=1)
 
         self.refresh_button.bind("<Button>", self.refresh_button_click)
